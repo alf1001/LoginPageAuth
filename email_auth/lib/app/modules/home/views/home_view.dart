@@ -19,7 +19,7 @@ class HomeView extends GetView<HomeController> {
       ),
       body: const Center(
         child: Text(
-          'HomeView is working',
+          'Selamat Anda Sudah Berhasil Login',
           style: TextStyle(fontSize: 20),
         ),
       ),

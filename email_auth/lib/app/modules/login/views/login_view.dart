@@ -11,21 +11,43 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login Screen'),
-        centerTitle: true,
-      ),
-      body: Padding(
+        body: Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+        image: AssetImage('assets/background.jpg'),
+        fit: BoxFit.cover,
+      )),
+      child: Padding(
         padding: const EdgeInsets.all(25),
         child: Column(
           children: [
-            TextField(
-              controller: emailC,
-              decoration: InputDecoration(labelText: 'Email'),
+            Padding(
+              padding: EdgeInsets.only(top: 80),
+              child: Text(
+                'Welcome!',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 33,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 10),
+              child: TextField(
+                controller: emailC,
+                decoration: InputDecoration(
+                    labelText: 'Email',
+                    labelStyle: TextStyle(color: Colors.white),
+                    hintStyle: TextStyle(color: Colors.grey.shade500)),
+              ),
             ),
             TextField(
               controller: passC,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(
+                  labelText: 'Password',
+                  labelStyle: TextStyle(color: Colors.white),
+                  hintStyle: TextStyle(color: Colors.grey.shade500)),
             ),
             SizedBox(
               height: 50,
@@ -37,6 +59,6 @@ class LoginView extends GetView<LoginController> {
           ],
         ),
       ),
-    );
+    ));
   }
 }
